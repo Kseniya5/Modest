@@ -1,0 +1,35 @@
+.wrapper-header {
+	background-color: $header-background-color;
+}
+.header {
+	@include center;
+	vertical-align: middle;
+	$navigation-menu-height: 60px;
+	height: $navigation-menu-height;
+	line-height: $navigation-menu-height;
+	@include medium-screen {
+		$navigation-menu-height: 80px;
+		height: $navigation-menu-height;
+		line-height: $navigation-menu-height;
+	}
+}
+.logo { 
+	$navigation-menu-height: 60px;
+	line-height: $navigation-menu-height;
+	float: none;
+	text-align: left;
+	@include medium-screen {
+		float: left;
+		line-height: $navigation-menu-height;
+	}
+	a {
+		display: block;
+		@include medium-screen {
+			line-height: 80px;
+		}
+		img {
+			display: inline-block;
+			vertical-align: middle;
+		}		
+	}
+}

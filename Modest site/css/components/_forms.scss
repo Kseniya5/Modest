@@ -1,0 +1,80 @@
+.intro-link {
+	display: inline-block;
+	margin-top: 25px;
+	margin-right: 10px;
+	padding: 0px 10px;
+	font: normal 10px/25px $secondary-font;
+	letter-spasing: -0.9px;
+	color: $white-color;
+	@include uppercase;
+	border-radius: 4px;
+	border: $base-border;
+	&:hover {
+		background-color: $base-color;
+		border-color: $base-color;
+	}
+	@include medium-screen {
+		padding: 5px 20px;
+		margin-top: 40px;
+		font-size: 14px;
+		line-height: 28px;
+	}
+}
+button {
+	@extend .intro-link;
+	background: transparent;
+	margin: auto;
+	margin-top: 25px;
+	display: block;
+}
+form {
+	padding: 25px 30px;
+	position: none;
+	@include medium-screen {
+		position: absolute;
+		bottom: 0;
+		right: $base-padding;
+	}	
+	background-color: $white-color;
+	.input-item {
+		display: inline-block;
+		padding-bottom: 25px;
+		&:first-child {
+			padding-right: $base-padding;
+		}
+	}
+	label {
+		@include secondary-header;
+		padding-left: 5px;
+		font-size: 14px;
+		line-height: 26px;
+		display: block;
+		color: $body-font-color;
+	}
+	input {
+		display: block;
+		width: $input-width / 2 + 30px;
+		height: $input-height;
+		background-color: #eaeef1;
+		border: none;
+		@include large-screen {
+			width: $input-width;
+		}
+	}
+	button {
+		padding-left: 25px;
+		padding-right: 25px;
+		display: inline-block;
+		text-aligh: left;
+		background-color: $base-color;
+		border-color: $base-color;
+	}
+	textarea {
+		@extend input;
+		width: $input-width + 30px + 30px + 15px;
+		@include large-screen {
+			width: $input-width * 2 + 15px;
+		}	
+		height: $input-height * 4;
+	}
+}

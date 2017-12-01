@@ -1,0 +1,31 @@
+.navigation {	
+	float: right;
+	text-align: left;
+	@include medium-screen {
+		text-align: none;
+		height: $navigation-menu-height;
+	}
+	li {
+		margin-right: 0;
+		@include large-screen {
+			margin-right: 16px;	
+		}
+		display: $display-inline-block;	
+		.home {
+			color: $base-color;
+			border-color: $base-color;
+		}
+	}
+	a {
+		padding: 4px 10px;
+		border-radius: 4px;
+		border: $base-border;
+		border-color: transparent;
+	}
+}
+.navigation-item {
+	@include nav-menu-font;
+	&:hover {
+		border-color: #5b6168;
+	}
+}

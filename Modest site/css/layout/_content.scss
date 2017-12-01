@@ -1,0 +1,472 @@
+.wrapper-slide.intro.active {
+	background-image: url(../img/intro.png);	
+}
+.wrapper-slide {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 100% 100%;
+}
+.slide {
+	@include center;
+	padding-top: 150px;
+	text-align: left;
+	position: relative;
+	@include medium-screen {
+		padding-top: 180px;
+	}
+	@include large-screen {
+		padding-top: 220px;
+	}
+	p {
+		max-width: 655px;
+	}
+}
+.main-header {
+	@include main-header;
+}			
+p {
+	@include p;
+}	
+.slide .main-header {
+	padding-top: 0;
+	padding-bottom: $base-padding;
+}
+.intro-links {
+	padding-bottom: 150px;
+	@include medium-screen {
+		padding-bottom: 180px;
+	}
+	@include large-screen {
+		padding-bottom: 250px;
+	}
+}
+.slider {
+	position: absolute;
+	right: $base-padding;
+	bottom: 25px;
+	div {	
+		margin-left: 7px;	
+		width: 7px;
+		height: 7px;
+		@include round;
+		border: $base-border;
+		display: inline-block;
+		@include medium-screen {
+			width: 9px;
+			height: 9px;
+		}
+		@include large-screen {
+			width: 10px;
+			height: 10px;
+		}
+		&.active {
+			background-color: $white-color;
+		}	
+	}
+}
+.about, .team, .work {
+	@include center;
+	padding-bottom: $padding-main-block / 2;
+	@include medium-screen {
+		padding-bottom: $padding-main-block;	
+	}
+}
+.about h2, .team h2, .work h2, .contacts h2 {
+	display: block;
+	color: $header-font-color;
+	position: relative;
+	margin-left: 23px;
+	&:before {
+		@include before;
+		@include before-main-header;
+		position: absolute;
+	}
+}
+.about-content {
+	width: 100%;
+	float: none;
+	@include medium-screen {
+		padding-right: 30px / 1170px *100%;
+		width: 670px / 1170px * 100%;
+		float: left;
+	}	
+}
+.about-description {
+	p {
+		color: $body-font-color;
+		&:first-child {
+			padding-bottom: 25px;
+		}
+	}
+}
+.bold-font {
+	font-family: $body-font-bold;
+}
+.social-link {
+	padding-top: 35px;
+	padding-bottom: 35px;
+	@include medium-screen {
+		padding-top: 50px;
+		padding-bottom: 0;
+	}
+	li {
+		margin-right: 1px;
+		display: inline-block;
+		background-color: #c8cdd0;
+		&:hover {
+			background-color: #d0d5d9;
+		}
+	}	
+}
+.about-list {
+	width: 100%;
+	float: none;
+	@include medium-screen {
+		width: 465px / 1170px *100%;
+		float: left;
+	}	
+	p {
+		color: $body-font-color;
+		letter-spasing: 0.03px;
+	}
+}
+h4 {
+	@include secondary-header;
+	line-height: 22px;
+	@include large-screen {
+		line-height: 35px;
+	}
+}
+ol {
+	counter-reset: list;
+	margin-left: 0;
+	padding-left: $margin-counter + $counter-width - 15px;
+	box-sizing: border-box;
+	@include large-screen {
+		padding-left: $margin-counter + $counter-width;
+	}
+	li {
+		padding-bottom: 15px;
+		display: block;
+		position: relative;
+		@include large-screen {
+			padding-bottom: 25px;
+		}
+		&::before {
+		 	display: inline-block;
+		  	text-align: center;
+		  	content: "0" counter(list);
+		  	counter-increment: list;
+		  	line-height: $counter-width - 5px;
+		  	width: $counter-width - 5px;
+		  	height: $counter-width - 5px;
+		  	background-color: $base-color;
+		  	font: normal 20px/45px $secondary-font;
+		  	color: $white-color;
+		  	position: absolute;
+		  	left: -($margin-counter + $counter-width - 15px);
+		  	top: 10px;
+		  	@include large-screen {
+		  		width: $counter-width;
+		  		height: $counter-width;
+		  		line-height: $counter-width;
+		  		left: -($margin-counter + $counter-width);
+		  	}
+		}
+	}
+}
+.wrapper-team {
+	border-top: solid 1px #dde1e4;
+}
+.team {
+	padding-left: 0;
+	padding-right: 0;
+	max-width: 1140px + 2 * $base-padding;
+	h2 {
+		margin-left: 23px + $base-padding;
+		padding-bottom: $padding-bottom-h2 + 5px;
+	}
+}
+.team-items {
+	text-align: center;
+	margin: auto;
+}		
+.team-item {
+	display: inline-block;
+	padding: 0 $base-padding;
+	padding-bottom: 25px;
+	width: $with-block-small-screen;
+	max-width: 262px;
+	@include large-screen {
+		padding-bottom: 0;
+	}
+
+	.team-item-image {
+		position: relative;
+	}
+	&:hover {
+		.about-team-item {
+			background-color: $background-base-color;
+		}
+		h4, p {
+			color: $white-color;
+		}
+		img {
+			opacity: 0.4;
+		}
+		.social-link1 {
+			display: block;
+		}
+	}
+	img {
+		display: block;
+		width: 100%;
+	}
+	.about-team-item {
+		background-color: $secondary-background-color;
+		padding-left: 0;
+		padding-top: 20px;
+		padding-bottom: 10px;
+		@include medium-screen {
+			padding-left: 20px;
+			text-align: left;	
+		}
+	}
+	h4 {
+		display: block;
+		font-size: 16px;
+		line-height: 18px;
+	}
+	p {
+		font-size: 14px;
+		line-height: 26px;
+		color: $body-font-color;
+	}
+	.social-link1 {
+		display: none;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: ($width-social-link1 / 2 + $width-social-link1 + 1px) * -1;
+		margin-top: $width-social-link1 / 2 * -1;
+		padding: 0;
+		li {
+		margin-right: 1px;
+		display: inline-block;
+		background-color: $background-base-color;
+			&:hover {
+			background-color: #4e5a62;
+			}
+		}	
+	}
+}
+.wrapper-work {
+	background-color: $background-base-color;
+	.work h2 {
+		color: $white-color;
+	}
+}
+.work-items {
+	@extend .team-items;
+}
+.work-item {
+	display: inline-block;
+	max-width: 360px;
+	.figcaption, .plus {
+		display: none;
+	}
+} 
+.work {
+	@extend .team;
+	padding-bottom: $padding-main-block - 40px;
+	h2 {
+		padding-bottom: $padding-bottom-h2 + 10px;
+	}
+}
+.work-item {
+	@extend .team-item;
+	padding: 0;
+	margin: 0 $base-padding;
+	margin-bottom: 30px;
+	position: relative;
+	&:hover {
+		.figcaption, .plus {
+			display: block;
+			position: absolute;
+		}
+		.figcaption {
+			height: $figcaption-height;
+			opacity: 0.5;
+			@include secondary-header;
+			color: $white-color;
+			background-color: $header-font-color;
+			opacity: 1;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			line-height: $height-figcaption;
+			padding-left: 0;
+			font-size: 14px;
+			line-height: $figcaption-height;
+			@include medium-screen {
+				font-size: 16px;
+				line-height: $height-figcaption;
+				height: $height-figcaption;
+
+			}
+			@include large-screen {
+				padding-left: 20px;
+				text-align: left;
+				font-size: 18px;
+			}
+
+		}
+		.plus {
+			background: url(../img/plus.png) center center no-repeat;
+			width: $width-plus;
+			height: $width-plus;
+			top: 50%;
+			left: 50%;
+			margin-left: $width-plus / 2 * -1;
+			margin-top: ($figcaption-height - $width-plus) * -1;
+			@include medium-screen {
+				margin-top: ($height-figcaption - $width-plus) * -1;
+			}	
+		}
+	}
+}
+.services {
+	@extend .team;
+	padding-bottom: 0;
+	@include large-screen {
+		padding-bottom: 80px;
+	}	
+}
+.service-items {
+	padding-bottom: 30px;
+	text-align: center;
+	li {
+		padding-right: $base-padding;
+		padding-left: $base-padding;
+		width: $with-block-small-screen;
+		max-width: 262px;
+		display: inline-block;
+		text-align: center;
+		a {
+			margin: 0 auto;
+			display: block;
+			padding-top: 5px;
+			width: 100%;
+			@include large-screen {
+				padding-top: 35px;
+			}
+			h3 {
+				@include secondary-header;
+				font-size: 17px;
+				padding-bottom: 10px;
+			}
+			p {
+				padding-bottom: 50px;
+				line-height: 26px;
+				color: $body-font-color;
+			}
+			img {
+				padding-bottom: 25px;
+				display: block;
+				margin: auto;
+			}
+		}
+	}
+}
+.wrapper-features {
+	@extend .wrapper-work;
+}
+.features {
+	@extend .work;
+	padding-bottom: 10px;
+	@include large-screen {
+		padding-bottom: $padding-main-block - 20px;
+	}	
+	h2 {
+		padding-top: $padding-top-h2 + 5px;
+	}
+	.features-items {
+		text-align: center;
+	}
+	.features-item {
+		display: inline-block;
+		padding: 0 $base-padding;
+		padding-bottom: 35px;
+		width: $with-block-small-screen;
+		max-width: 360px;
+		text-align: left;
+		vertical-align: top;
+		img {
+			display: block;
+			width: 100%;
+		}
+		h4 {
+			padding-top: 25px;
+			@include large-screen {
+				padding-top: 45px;
+			}
+			color: $white-color;
+		}
+		p {
+			padding-top: 10px;
+			color: #dcdfe1;
+		}
+	}
+}
+.contacts-wrapper {
+	h2 {
+		@include center;
+		padding-top: $padding-top-h2 - 15px;
+		padding-bottom: $padding-bottom-h2 + 10px;
+		max-width: 1140px - 23px;
+		padding-left: 23px + $base-padding;
+		color: $header-font-color;
+		&:before {
+			left: $base-padding;
+		}
+	}
+	.contacts {
+		@include center;
+		padding-top: 50px;
+		margin-bottom: $padding-main-block - 75px;
+		@include medium-screen {
+			margin-bottom: $padding-main-block - 40px;
+		}
+		@include medium-screen {
+			margin-bottom: $padding-main-block - 10px;
+		}	
+		position: relative;
+		.contact-info {
+			width: 100%;
+			@include medium-screen {
+				width: 555px / 1170px * 100%;
+			}		
+			h3 {
+				@include secondary-header;
+				padding-left: 10px;
+				padding-bottom: 20px;
+				font-size: 20px;
+			}
+			p {
+				color: $body-font-color;
+				padding-bottom: 15px;
+				@include large-screen {
+					padding-bottom: 30px;
+				}
+				&:last-child {
+					padding-bottom: 5px;
+				}
+			}
+		}
+	}	
+}
+#map {
+	width: 100%;
+	height: 345px;
+	background-color: $secondary-background-color;
+}

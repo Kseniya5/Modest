@@ -1,0 +1,81 @@
+@mixin small-screen {
+	@media (min-width: 480px) {
+		@content;
+	}
+}
+@mixin medium-screen {
+	@media (min-width: 768px) {
+		@content;
+	}
+}
+@mixin large-screen {
+	@media (min-width: 1024px) {
+		@content;
+	}
+}
+@mixin center {
+	margin: 0 auto;
+	max-width: 1140px;
+	padding-left: $base-padding;
+	padding-right: $base-padding;
+	text-align: left;
+}
+@mixin uppercase  {
+	text-transform: uppercase;
+}
+@mixin nav-menu-font {
+	font: normal 9px/42px 'open_sanssemibold';
+	color: #a4aead;
+	@include uppercase;
+	@include medium-screen {
+		font-size: 11px;
+	}
+	@include large-screen {
+		font-size: 14px;
+	}
+}
+@mixin main-header {
+	padding-bottom: $padding-bottom-h2 - 30px;
+	padding-top: $padding-top-h2 - 30px;
+	font: normal 28px/34px'quattrocento_sansbold';
+	color: $white-color;
+	letter-spacing: -2.1px;
+	@include uppercase;
+	@include large-screen {
+		padding-top: $padding-top-h2;
+		padding-bottom: $padding-bottom-h2;
+		font-size: 36px;
+		line-height: 42px;
+	}
+}
+@mixin p {
+	font: normal 13px/21px'open_sansregular';
+	color: $secondary-body-font-color;
+	@include medium-screen {
+		font-size: 14px;
+	}
+	@include large-screen {
+		font-size: 16px;
+		line-height: 26px;
+	}
+}
+@mixin round {
+	border-radius: 100%;
+}
+@mixin before {
+	content: " ";
+	display: inline-block;
+}
+@mixin before-main-header {
+	width: 10px;
+	height: 35px;
+	background-color: $secondary-background-color;
+	left: -23px;
+}
+@mixin secondary-header {
+	display: inline-block;
+	font: normal 18px/35px 'quattrocento_sansbold';
+	color: $header-font-color;
+	letter-spacing: -0.9px;
+	@include uppercase;
+}

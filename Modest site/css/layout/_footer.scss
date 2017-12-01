@@ -1,0 +1,40 @@
+.wrapper-footer {
+	@extend .wrapper-work;
+	.footer {
+		@include center;
+		height: $footer-height - 35px;
+		@include large-screen {
+			height: $footer-height;
+		}
+		p {
+			float: left;
+			color: $white-color;
+			font-size: 10px;
+			line-height: $footer-height - 35px;
+			@include medium-screen {
+				font-size: 12px;
+			}	
+			@include large-screen {
+				font-size: 14px;
+				line-height: $footer-height;
+			}	
+		}
+		ul {
+			float: right;
+			li {
+				display: inline-block;
+				margin-left: 10px;
+				@include medium-screen {
+					margin-left: 15px;
+				}	
+				a {
+					width: 20px;
+					height: $footer-height - 35px;
+					@include large-screen {
+						height: $footer-height;
+					}	
+				}
+			}
+		}
+	}
+}
